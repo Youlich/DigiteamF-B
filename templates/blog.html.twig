@@ -1,0 +1,87 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>DigiTeam - agence digitale sport - Notre blog</title>
+    <meta name="description" content="L'agence Digiteam Sport vous accompagne de la conception jusqu'à la mise en place de votre stratégie digitale. Notre blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}" />
+
+    <title>{% block title %}DigiTeam{% endblock %}</title>
+
+    {% include 'layout/stylesheets.html.twig' %}
+
+</head>
+
+
+{% include 'layout/navbar.html.twig' %}
+<body>
+<div class="titlepage">
+
+    <div class="container">
+        <div class="">
+            <div class="main_home text-center">
+                <div class="col-md-12">
+                    <div class="">
+                        <div class="">
+                            <div class="home_text ">
+                                <h1 class="text-orange">Notre blog</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+<br/><br/><br/><br/>
+
+
+
+<div class="container">
+<div class="">
+    <div class="filters-button-group text-right sm-text-center">
+        <button class="btn filter-button" data-filter="tout">Tout</button>
+        <button class="btn filter-button" data-filter="Web">Web</button>
+        <button class="btn filter-button" data-filter="Conseil">Conseil</button>
+        <button class="btn filter-button" data-filter="InboundMarketing">Inbound Marketing</button>
+        <button class="btn filter-button" data-filter="Design">Design</button>
+    </div>
+</div>
+    <br/><br/><br/><br/>
+
+
+
+<div class="row">
+
+    {% for article in articles %}
+
+        <div class="col-md-4 filter tout {{ article.category }}">
+
+            <div class="card-content">
+                <div class="card-img">
+                    <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}" style="max-width:100%;min-width: 100%;">
+                    <span><h4>{{ article.titre }}</h4></span>
+                </div>
+                <div class="card-desc">
+                    
+                    <p>{{ article.resume }}</p>
+
+                    <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                </div>
+            </div>
+
+        </div>
+    {% endfor %}  
+
+   
+</div> <br/><br/><br/>
+</div>
+
+{% include 'layout/footer.html.twig' %}
+</body>
+{% include 'layout/javascripts.html.twig' %}
+

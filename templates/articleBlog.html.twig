@@ -1,0 +1,126 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>DigiTeam - agence digitale sport</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}" />
+
+    <title>{% block title %}DigiTeam{% endblock %}</title>
+
+    {% include 'layout/stylesheets.html.twig' %}
+
+</head>
+
+<body>
+{% include 'layout/navbar.html.twig' %}
+<div class="titlepage" style="padding-top: 4%">
+        <div class="container">
+            <div >
+                <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}" class="img-fluid imageblog">
+                <br/><br/>
+            </div>
+            <div class="main_home text-center">
+                <div class="col-md-12">
+                    <div class="">
+                        <div class="">
+                            <div class="home_text ">
+                                <h2 class="text-orange">{{ article.titre }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<br/><br/>
+<div class="container">
+<div class="row" style="border: 2px dashed #f9af32;padding-top: 2%;">
+    <div class="col-md-4">
+
+        {% if article.auteur == 'Maxime CONSTANTIN' %}
+            <img src="{{ asset('/images/Maxime.jpg') }}" alt="Photo Maxime" class="img-circle" />
+        {% endif %}
+
+        {% if article.auteur == 'Elodie ROUEL'%}
+            <img src="{{ asset('/images/Elodie.jpg') }}" alt="Photo Elodie" class="img-circle" />
+        {% endif %}
+
+        {% if article.auteur == 'Julie TATIBOUET'%}
+            <img src="{{ asset('/images/julie.jpg') }}" alt="Photo Julie" class="img-circle" />
+        {% endif %}
+
+        {% if article.auteur == 'Florian BRETON'%}
+            <img src="{{ asset('/images/Florian.jpg') }}" alt="Photo Florian" class="img-circle" />
+        {% endif %}
+        
+        
+    </div>
+    <div class="col-md-6"><h5>{{ article.resume }}</h5></div>
+</div>
+    <br/><br/>
+    <div class="container">
+        
+        <div class="article-contenu">
+            {{ article.contenu | raw }}
+        </div>
+
+        <div class="article-infos pull-right">
+            <p>Auteur : {{ article.auteur }}</p>
+            <p>Publie le : {{ article.dateAjout | date('d/m/y') }}</p>
+        </div>
+
+        <br/><br/><br/><br/>
+        <div class="row" style="text-align: right">
+            <div class="attr-nav">
+                <ul class="list-inline m-top-20">
+                    <li style="padding-top: 8%"><h5>Partagez sur</h5></li>
+                    <li><a href=""><i class="fa fa-facebook" style="color: black"></i></a></li>
+                    <li><a href=""><i class="fa fa-twitter" style="color: black"></i></a></li>
+                    <li><a href=""><i class="fa fa-linkedin" style="color: black"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram" style="color: black"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top:30px;">
+            {% include 'form/commentaire.html.twig' %}
+        </div>
+
+        
+
+    </div>
+
+    <div style="margin-top:40px;">
+        <h3 style="margin-bottom:30px;">Vos commentaires</h3>
+
+        {% for commentaire in article.commentaires %}
+            <div class="commentaires" style="border-bottom:1px solid grey;">
+                <div class="commentaire-header" style="font-size: 1.3rem;font-weight: 400;">
+                    <p style="color:#271111;" >{{ commentaire.nom }} {{ commentaire.prenom }}</p>
+                </div>
+                <div class="commentaire-body" style="font-size: 1.2rem;padding-top:5px;padding-bottom:5px;">
+                    <p style="color:#111111;" >{{ commentaire.contenu }}</p>
+                </div>
+
+                <div class="commentaire-footer" style="font-size: 0.9rem;font-weight:normal;margin-bottom:20px;">
+                    <p style="color:#888888;">Publié le : {{ commentaire.dateAjout | date('d/m/y') }}</p>
+                </div>
+                
+                
+                
+            </div>
+            </br>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% include 'layout/footer.html.twig' %}
+</body>
+{% include 'layout/javascripts.html.twig' %}
+

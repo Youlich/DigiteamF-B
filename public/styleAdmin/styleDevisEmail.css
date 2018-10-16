@@ -1,0 +1,228 @@
+body
+{
+	height:1170px;
+	width:827px;
+	padding-top: 1%;
+	padding-left: 10%;
+	padding-right: 10%;
+	font-family: Arial;
+}
+
+.logo-digiteam
+{
+	text-align:right;
+}
+
+.logo-digiteam img
+{
+	max-height: 85px;
+	max-width: 85px;
+}
+
+.devis-numero
+{
+	font-size: 20px;
+}
+
+.informations-emetteur-destinataire
+{
+	display: flex;
+}
+
+.informations-emetteur-destinataire p
+{
+	margin:3px;
+}
+
+.emetteur-champs
+{
+	width:33%;
+	display: inline-block;
+	background-color: #BFBFBF;
+}
+
+.emetteur-infos
+{
+	width:33%;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.destinataire
+{
+	width:33%;
+	display: inline-block;
+	background-color: #BFBFBF;
+}
+
+#destinataire-margin-top
+{
+	margin-top: 5px;
+}
+
+.table-devis
+{
+	margin-top: 30px;
+	width:100%;
+	border-spacing: 0px;
+}
+
+.table-devis thead
+{
+	background-color: #8EAADB;
+}
+
+.table-devis p
+{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.table-devis tbody p
+{
+	font-weight: normal;
+}
+
+.table-devis th
+{
+	border: 1px solid black;
+}
+
+.th-description
+{
+	width: 52%;
+}
+
+.th-charge
+{
+	width: 12%;
+}
+
+.th-prixHT
+{
+	width: 12%;
+}
+
+.th-TVA
+{
+	width: 12%;
+}
+
+.th-TTC
+{
+	width: 12%;
+}
+
+.th-align-left
+{
+	text-align: left;
+
+}
+
+.th-align-left p
+{
+	margin-left: 5px;	
+}
+
+
+.montant-total
+{
+	margin-top: 30px;
+	display: flex;
+}
+
+.montant-total p
+{
+	margin: 0px;
+}
+
+
+.champs-montant-total
+{
+	margin-left: 57%;
+	width:33%;
+	display: inline-block;
+}
+
+.valeur-montant-total
+{
+	width:10%;
+	display: inline-block;
+	text-align: right;
+}
+
+#margin-top-border
+{
+	margin-top: 10px;
+	padding-top: 2px;
+	border-top: 1px solid black;
+}
+
+#margin-top-accompte
+{
+	margin-top: 20px;
+}
+
+.signatures
+{
+	margin-top: 20px;
+	display: flex;	
+}
+
+.signatures p
+{
+	margin-top: 5px;
+}
+
+.signature-agence
+{
+	width:50%;
+	padding-left: 0.5%;
+	padding-right: 0.5%;
+	border: 1px solid black;
+	height: 150px;
+}
+
+.signature-client
+{
+	width:50%;
+	background-color: #A6A6A6;
+	padding-left: 0.5%;
+	padding-right: 0.5%;
+	border: 1px solid black;
+	height: 150px;
+}
+
+.footer
+{
+	margin-top: 20px;
+	display: flex;
+	padding-bottom: 3%;
+}
+
+.footer p
+{
+	margin:0;
+}
+
+.adresse-digiteam
+{
+	width:33%;
+}
+
+.adresse-contact
+{
+	width:33%;
+}
+
+.adresse-banque
+{
+	width:34%;
+}
+
+#border-top-margin-bottom
+{
+	border-top: 1px solid black;
+	margin-bottom: 5px;
+	padding-top: 2px;
+}
