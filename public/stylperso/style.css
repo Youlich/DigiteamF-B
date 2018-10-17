@@ -137,8 +137,6 @@ li {
     transition: all 0.3s ease-out;
 }
 
-
-
 .m-top-80 {
     margin-top: 0px;
 }
@@ -159,6 +157,7 @@ li {
         vertical-align: auto;
         text-align: left;
     }
+
     .reseaux{
         visibility: visible;
     }
@@ -302,6 +301,10 @@ li {
     transition: all .5s;
 }
 
+h1 span, h2 span, h3 span, h4 span, h5 span, p span {
+    color: black;
+}
+
 /* Fin blog*/
 
 /*Agence*/
@@ -350,6 +353,13 @@ li {
     height : 226px;
 }
 /* Finexpertises*/
+
+/*services*/
+span{
+    font-size: small;
+}
+
+/*Fin services*/
 
 /*contact*/
 
