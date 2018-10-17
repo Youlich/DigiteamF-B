@@ -49,7 +49,7 @@
             <ul class="nav navbar-nav navbar-center">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#agence">Agence</a></li>
-                <li><a href="#expertise">Expertises</a></li>
+                <li><a href="{{ path('expertise') }}">Expertises</a></li>
                 <li><a href="{{ path ('services') }}">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="{{ path('blog') }}">Blog</a></li>
@@ -190,51 +190,14 @@
                                 <div class="col-xs-6">
                                     <div class="features_item_text m-top-50">
                                         <img src="{{ asset('/images/ux.png') }}" alt="ux design" class="img-circle" />
-                                        <p class="m-top-20">Design</p>
+                                        <p class="m-top-20">Design</p><br/><br/><br/>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12" >
-                        <br/><br/>
-                    </div>
-                    <div class="col-md-12" id="bars">
-                        <div class="skill">
-                            <div class="team_content_details_skills m-top-50">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="teamskillbar clearfix m-top-50 text-uppercase" data-percent="90%">
-                                            <label>Web</label>
-                                            <div class="teamskillbar-bar" style="width: 80%;"></div>
-                                        </div> <!-- End Skill Bar -->
 
-                                        <div class="teamskillbar clearfix m-top-50 text-uppercase" data-percent="90%">
-                                            <label>Consulting</label>
-                                            <div class="teamskillbar-bar" style="width: 75%;"></div>
-                                        </div> <!-- End Skill Bar -->
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="teamskillbar clearfix m-top-50 text-uppercase" data-percent="90%">
-                                            <label>Inbound marketing</label>
-                                            <div class="teamskillbar-bar" style="width: 90%;"></div>
-                                        </div> <!-- End Skill Bar -->
-
-                                        <div class="teamskillbar clearfix m-top-50 text-uppercase" data-percent="98%">
-                                            <label>Design</label>
-                                            <div class="teamskillbar-bar" style="width: 98%;"></div>
-                                        </div> <!-- End Skill Bar -->
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div><!-- End off skill -->
-                        <br/><br/><br/><br/>
-                    </div><!-- End col-md-12 -->
-
-                    <div align="center" >
+                    <div align="center">
                         <a href="{{ path ('expertise') }}" class="btn btn-default">En savoir plus</a>
                     </div>
                 </div>

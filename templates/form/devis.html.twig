@@ -128,7 +128,7 @@
 			</div>						
 
 			<div class="row">
-			    <div class="col-xs-12">
+			    <div class="col-md-5 col-xs-12">
 			        <div class="form-group">
 			            <div>
 			                {{ form_label(form.civilite, "Civilité", {'label_attr': {'class': 'control-label'}}) }}
@@ -177,7 +177,7 @@
 			        <div class="col-md-5 col-xs-12">
 			            <div class="form-group">
 			                <div>
-			                    {{ form_label(form.societe, "Societe", {'label_attr': {'class': 'control-label'}}) }}
+			                    {{ form_label(form.societe, "Société", {'label_attr': {'class': 'control-label'}}) }}
 			                </div>  
 			                <div>
 			                    {{ form_widget(form.societe, { 'attr': {'class': 'form-control'} }) }}
@@ -316,7 +316,7 @@
 			            <div class="form-group">
 			                <div>
 			                	{{ form_widget(form.caseObligatoire, { 'attr': {'class': ''} }) }}
-			                	<label>J'accepte les <a href="{{ path('mentionsLegales') }}">mentions légales</a> et la <a href="{{ path('mentionsLegales') }}">politique de confidentialité</a></label>
+			                	<label>J'accepte les <a href="{{ path('mentionsLegales') }}">mentions légales</a> et la <a href="{{ path('mentionsLegales') }}#politique">politique de confidentialité</a></label>
 			                    
 			                </div>  
 			                <div>
