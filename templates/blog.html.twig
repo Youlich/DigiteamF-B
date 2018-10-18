@@ -34,109 +34,108 @@
                     </div>
                 </div>
             </div>
-         </div>
         </div>
     </div>
+</div>
 <br/><br/><br/><br/>
 
 
 
 <div class="container">
-<div class="">
-    <div class="filters-button-group text-right sm-text-center">
-        <button class="btn filter-button" data-filter="tout">Tout</button>
-        <button class="btn filter-button" data-filter="Web">Web</button>
-        <button class="btn filter-button" data-filter="Conseil">Conseil</button>
-        <button class="btn filter-button" data-filter="InboundMarketing">Inbound Marketing</button>
-        <button class="btn filter-button" data-filter="Design">Design</button>
+    <div class="">
+        <div class="filters-button-group text-right sm-text-center">
+            <button class="btn filter-button" data-filter="tout">Tout</button>
+            <button class="btn filter-button" data-filter="Web">Web</button>
+            <button class="btn filter-button" data-filter="Conseil">Conseil</button>
+            <button class="btn filter-button" data-filter="InboundMarketing">Inbound Marketing</button>
+            <button class="btn filter-button" data-filter="Design">Design</button>
+        </div>
     </div>
-</div>
     <br/><br/><br/><br/>
 
-<div class="row">
-    {% for article in articles %}
+    <div class="row">
+        {% for article in articles %}
 
-        {% if article.category == 'Web' %}
-        <div id="Web" class="col-md-4 filter ({{ article.category }} == Web) ">
+            {% if article.category == 'Web' %}
+                <div id="Web" class="col-md-4 filter ({{ article.category }} == Web) ">
 
-            <div class="card-content">
-                <div class="card-img">
-                    <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                    <span><h4>{{ article.titre }}</h4></span>
-                </div>
-                <div class="card-desc">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
+                            <span><h4>{{ article.titre }}</h4></span>
+                        </div>
+                        <div class="card-desc">
 
-                    <p>{{ article.resume }}</p>
+                            <p>{{ article.resume }}</p>
 
-                    <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-        {% elseif article.category == 'Conseil' %}
-            <div id="Conseil"  class="col-md-4 filter ({{ article.category }} == Conseil) ">
-
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                        <span><h4>{{ article.titre }}</h4></span>
-                    </div>
-                    <div class="card-desc">
-
-                        <p>{{ article.resume }}</p>
-
-                        <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% elseif article.category == 'InboundMarketing' %}
-            <div id="InboundMarketing" class="col-md-4 filter ({{ article.category }} == InboundMarketing) ">
+            {% elseif article.category == 'Conseil' %}
+                <div id="Conseil"  class="col-md-4 filter ({{ article.category }} == Conseil) ">
 
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                        <span><h4>{{ article.titre }}</h4></span>
-                    </div>
-                    <div class="card-desc">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
+                            <span><h4>{{ article.titre }}</h4></span>
+                        </div>
+                        <div class="card-desc">
 
-                        <p>{{ article.resume }}</p>
+                            <p>{{ article.resume }}</p>
 
-                        <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-        {% elseif article.category == 'Design' %}
-            <div id="Design" class="col-md-4 filter ({{ article.category }} == Design) ">
-
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                        <span><h4>{{ article.titre }}</h4></span>
-                    </div>
-                    <div class="card-desc">
-
-                        <p>{{ article.resume }}</p>
-
-                        <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% elseif article.category == 'InboundMarketing' %}
+                <div id="InboundMarketing" class="col-md-4 filter ({{ article.category }} == InboundMarketing) ">
 
-        {% endif %}
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
+                            <span><h4>{{ article.titre }}</h4></span>
+                        </div>
+                        <div class="card-desc">
+
+                            <p>{{ article.resume }}</p>
+
+                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% elseif article.category == 'Design' %}
+                <div id="Design" class="col-md-4 filter ({{ article.category }} == Design) ">
+
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
+                            <span><h4>{{ article.titre }}</h4></span>
+                        </div>
+                        <div class="card-desc">
+
+                            <p>{{ article.resume }}</p>
+
+                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endif %}
         {% else %}
-                <div id="tout">
-                </div>
+            <div id="tout">
+            </div>
 
 
 
-{% endfor %}
+        {% endfor %}
 
 
 
 
-</div> <br/><br/><br/>
+    </div> <br/><br/><br/>
 </div>
 
 {% include 'layout/footer.html.twig' %}
 </body>
 {% include 'layout/javascripts.html.twig' %}
-

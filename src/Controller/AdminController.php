@@ -5,13 +5,10 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Session\Session;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Entity\Commentaire;
-use App\Form\CommentaireType;
 use App\Entity\Devis;
 use App\Form\DevisBackofficeType;
 use App\Form\DevisEnvoyerType;
@@ -22,6 +19,7 @@ use App\Service\prixDevis;
 use App\Service\prixServices;
 use App\Service\prixOptions;
 use Cocur\Slugify\Slugify;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class AdminController extends AbstractController
 {
@@ -308,37 +306,38 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             $avantEnvoyerDevis->remplissage($devis);
-
             $prixServices->calculer($devis);
             $prixOptions->calculer($devis);
             $prixDevis->calculer($devis);
-
             $devis->setStatut('en attente');
-
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($devis);
             $manager->flush();
+	        $dateExpiration = date('d/m/Y', strtotime('+1 month'));
+	        $mail = new PHPmailer();
+	        $mail->isSMTP(); // Paramétrer le Mailer pour utiliser SMTP
+	        $mail->Host = 'smtp.gmail.com'; // Spécifier le serveur SMTP
+	        $mail->SMTPAuth = true; // Activer authentication SMTP
+	        $mail->Username = 'digiteamp5@gmail.com'; // Votre adresse email d'envoi
+	        $mail->Password = 'digiteam123'; // Le mot de passe de cette adresse email
+	        $mail->SMTPSecure = 'ssl'; // Accepter SSL
+	        $mail->Port = 465;
+	        $mail->setFrom('digiteamp5@gmail.com', 'DigiTeam'); // Personnaliser l'envoyeur
+	        $mail->addAddress($devis->getEmail()); // Ajouter le destinataire
+	        $mail->AddAttachment($_SERVER["DOCUMENT_ROOT"] . '/pdf/conditionvente.pdf', 'conditionvente.pdf');
+	        $mail->isHTML(true); // Paramétrer le format des emails en HTML ou non
 
-            $dateExpiration = date('d/m/Y', strtotime('+1 month'));            
-
-            $message = (new \Swift_Message('Demande de devis'))
-                ->setFrom('digiteamp5@gmail.com')
-                ->setTo($devis->getEmail());
-	           // ->attach(\Swift_Attachment::fromPath('/pdf/conditionvente.pdf'));
-
-            $message->setBody(
-                    $this->renderView(
-                        'admin/emails/devisEnvoyer.html.twig', array(
-                            'devis' => $devis,
-                            'dateExpiration' => $dateExpiration,
-                        )
-                    ),
+	        $mail->Subject = "Votre demande de devis DigiTeam";
+	        $mail->Body = $this->renderView(
+		        'admin/emails/devisEnvoyer.html.twig', array(
+			        'devis' => $devis,
+			        'dateExpiration' => $dateExpiration,
+	        ),
                     'text/html'
-                )
-            ;
+	        );
+	        //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+	        $mail->send();
 
-
-            $mailer->send($message);
 
             return $this->redirectToRoute('devis_nouveaux'); 
         }        
