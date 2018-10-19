@@ -44,14 +44,12 @@
 
 		.emetteur-champs
 		{
-			width:33%;
 			display: inline-block;
 			background-color: #BFBFBF;
 		}
 
 		.emetteur-infos
 		{
-			width:33%;
 			display: inline-block;
 			margin-left: 10px;
 		}
@@ -59,7 +57,7 @@
 		.destinataire
 		{
 			width:33%;
-			display: inline-block;
+			align-items: right;
 			background-color: #BFBFBF;
 		}
 
@@ -229,16 +227,12 @@
 			padding-top: 2px;
 		}
 
-		.devisDT{
-			background-image: url("/images/BackgroundDevis.png");
-		}
-
 	</style>
 </head>
 <body>
 
 <!-- entete -->
-<tr class="pagetoplogo">
+<tr align="center" class="pagetoplogo">
 	<td class="w640"  width="640">
 		<table  class="w640"  width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#327cf9">
 			<tbody style="background-color:#327cf9">
@@ -246,7 +240,7 @@
 				<td class="w30"  width="30"></td>
 				<td  class="w580"  width="580" valign="middle" align="center">
 					<div class="pagetoplogo-content" >
-						<img style="background-color:#327cf9;min-height:70px;width:70px;margin-top:10px;margin-bottom:10px;" src="http://digiteam-p5.com/images/logo.png" class="logo-digiteam" alt="logo DigiTeam" title="logo agence Digiteam sport">
+						<img style="background-color:#327cf9;min-height:70px;width:70px;margin-top:10px;margin-bottom:10px;" src="http://digiteamp5.com/images/logo.png" class="logo-digiteam" alt="logo DigiTeam" title="logo agence Digiteam sport">
 					</div>
 				</td>
 				<td class="w30"  width="30"></td>
@@ -271,7 +265,7 @@
 
 				<!-- contenu -->
 				<tr class="content">
-					<td class="w640" class="w640"  width="640" bgcolor="#F8F8F8">
+					<td class="w640"  width="640" bgcolor="#F8F8F8">
 						<table class="w640"  width="640" cellpadding="0" cellspacing="0" border="0">
 							<tbody>
 							<tr>
@@ -288,7 +282,7 @@
 												<div align="left" class="article-content">
 													<p> {{ devis.civilite }} {{ devis.nom }} {{ devis.prenom }},</p>
 													<p>
-														Suite à votre demande de devis en date du {{ "now"|date("d/m/Y") }} depuis notre site http://digiteam-p5.com,
+														Suite à votre demande de devis en date du {{ "now"|date("d/m/Y") }} depuis notre site http://digiteamp5.com,
 														nous vous prions de trouver ci-joint notre proposition commerciale. </p>
 													<p>Cette proposition tient compte des éléments de votre demande suivants :
 													</p>
@@ -373,7 +367,7 @@
 								<td class="w30"  width="30"></td>
 								<td class="w580"  width="580" valign="top">
 									<p align="right" class="pagebottom-content-left">
-										<a style="color:#f9af32;" href="http://digiteam-p5.com"><span style="color:#1D3F7C;">Site digiteam</span></a>
+										<a style="color:#f9af32;" href="http://digiteamp5.com"><span style="color:#1D3F7C;">Site digiteam</span></a>
 									</p>
 								</td>
 
@@ -398,7 +392,7 @@
 
 
 
-<div class="" style="margin-left:10%;margin-right:10%;">
+<div align="center" style="margin-left:10%;margin-right:10%;width:900px;">
 	<div class="logo-digiteam"></div>
 	<div class="devis-numero">
 		<p><strong>DEVIS</strong> n°{{ devis.id }}</p>
@@ -747,7 +741,7 @@
 			<p>DigiTeam</p>
 			<p>Tel : 04-67-00-00-12</p>
 			<p>Mail : contact@digteam.com</p>
-			<p>Site : www.digiteam-p5.com</p>
+			<p>Site : www.digiteamp5.com</p>
 		</div>
 
 		<div class="adresse-banque">
