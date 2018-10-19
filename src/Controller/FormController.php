@@ -56,7 +56,7 @@ class FormController extends AbstractController
     /**
      * @Route("/devis", name="devis")
      */
-    public function devis(Request $request, addNewsletter $addNewsletter)
+    public function devis(Request $request, addNewsletter $addNewsletter, SendMail $mailer)
     {
     	$devis = new Devis();
 
@@ -84,6 +84,8 @@ class FormController extends AbstractController
 
             $manager->persist($devis);
             $manager->flush();
+	        $dateExpiration = date('d/m/Y', strtotime('+1 month'));
+	        $mailer->SendMailDevis($devis,$dateExpiration);
 
             return $this->redirectToRoute('accueil');
         }
