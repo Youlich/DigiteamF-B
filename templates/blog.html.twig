@@ -16,9 +16,9 @@
 
 </head>
 
-
-{% include 'layout/navbar.html.twig' %}
 <body>
+{% include 'layout/navbar.html.twig' %}
+
 <div class="titlepage">
 
     <div class="container">
@@ -53,89 +53,33 @@
     </div>
     <br/><br/><br/><br/>
 
+
+
     <div class="row">
+
         {% for article in articles %}
 
-            {% if article.category == 'Web' %}
-                <div id="Web" class="col-md-4 filter ({{ article.category }} == Web) ">
+            <div class="col-md-4 filter tout {{ article.category }}">
 
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                            <span><h4>{{ article.titre }}</h4></span>
-                        </div>
-                        <div class="card-desc">
-
-                            <p>{{ article.resume }}</p>
-
-                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
-                        </div>
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}" style="max-width:100%;min-width: 100%;">
+                        <span><h4>{{ article.titre }}</h4></span>
                     </div>
-                </div>
-            {% elseif article.category == 'Conseil' %}
-                <div id="Conseil"  class="col-md-4 filter ({{ article.category }} == Conseil) ">
+                    <div class="card-desc">
 
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                            <span><h4>{{ article.titre }}</h4></span>
-                        </div>
-                        <div class="card-desc">
+                        <p>{{ article.resume }}</p>
 
-                            <p>{{ article.resume }}</p>
-
-                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-            {% elseif article.category == 'InboundMarketing' %}
-                <div id="InboundMarketing" class="col-md-4 filter ({{ article.category }} == InboundMarketing) ">
-
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                            <span><h4>{{ article.titre }}</h4></span>
-                        </div>
-                        <div class="card-desc">
-
-                            <p>{{ article.resume }}</p>
-
-                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-            {% elseif article.category == 'Design' %}
-                <div id="Design" class="col-md-4 filter ({{ article.category }} == Design) ">
-
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}">
-                            <span><h4>{{ article.titre }}</h4></span>
-                        </div>
-                        <div class="card-desc">
-
-                            <p>{{ article.resume }}</p>
-
-                            <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
-                        </div>
+                        <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
                     </div>
                 </div>
 
-            {% endif %}
-        {% else %}
-            <div id="tout">
             </div>
-
-
-
         {% endfor %}
-
-
 
 
     </div> <br/><br/><br/>
 </div>
-
-{% include 'layout/footer.html.twig' %}
+    {% include 'layout/footer.html.twig' %}
 </body>
 {% include 'layout/javascripts.html.twig' %}

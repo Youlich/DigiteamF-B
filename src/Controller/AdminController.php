@@ -19,7 +19,7 @@ use App\Service\prixDevis;
 use App\Service\prixServices;
 use App\Service\prixOptions;
 use Cocur\Slugify\Slugify;
-use PHPMailer\PHPMailer\PHPMailer;
+use App\Service\SendMail;
 
 class AdminController extends AbstractController
 {
@@ -287,7 +287,7 @@ class AdminController extends AbstractController
         prixDevis $prixDevis, 
         prixServices $prixServices,
         prixOptions $prixOptions,
-        \Swift_Mailer $mailer
+	    SendMail $mailer
     )
     {
         if(!isset($_SESSION['admin']))
@@ -314,31 +314,7 @@ class AdminController extends AbstractController
             $manager->persist($devis);
             $manager->flush();
 	        $dateExpiration = date('d/m/Y', strtotime('+1 month'));
-	        $mail = new PHPmailer();
-	        $mail->isSMTP(); // Paramétrer le Mailer pour utiliser SMTP
-	        $mail->Host = 'smtp.gmail.com'; // Spécifier le serveur SMTP
-	        $mail->SMTPAuth = true; // Activer authentication SMTP
-	        $mail->Username = 'digiteamp5@gmail.com'; // Votre adresse email d'envoi
-	        $mail->Password = 'digiteam123'; // Le mot de passe de cette adresse email
-	        $mail->SMTPSecure = 'ssl'; // Accepter SSL
-	        $mail->Port = 465;
-	        $mail->setFrom('digiteamp5@gmail.com', 'DigiTeam'); // Personnaliser l'envoyeur
-	        $mail->addAddress($devis->getEmail()); // Ajouter le destinataire
-	        $mail->AddAttachment($_SERVER["DOCUMENT_ROOT"] . '/pdf/conditionvente.pdf', 'conditionvente.pdf');
-	        $mail->isHTML(true); // Paramétrer le format des emails en HTML ou non
-
-	        $mail->Subject = "Votre demande de devis DigiTeam";
-	        $mail->Body = $this->renderView(
-		        'admin/emails/devisEnvoyer.html.twig', array(
-			        'devis' => $devis,
-			        'dateExpiration' => $dateExpiration,
-	        ),
-                    'text/html'
-	        );
-	        //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-	        $mail->send();
-
-
+	        $mailer->SendMailDevis($devis, $dateExpiration);
             return $this->redirectToRoute('devis_nouveaux'); 
         }        
 
