@@ -384,3 +384,7 @@ span{
 #portfolio{
     padding-bottom: 10%;
 }
+
+.form-group li{
+    color: red;
+}
