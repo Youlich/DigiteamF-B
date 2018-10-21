@@ -10,33 +10,11 @@
     visibility: hidden;
 }
 
-nav.navbar.bootsnav {
-    background-color: #1D3F7C;
-    height: 150px;
-    border-bottom: none;
-}
 
-#navbar-menu{
-    padding-top: 30px;
-}
-nav.navbar.bootsnav ul.nav > li > a, .attr-nav > ul > li > a {
-    color: white;
-    background-color: transparent !important;
-}
 
 .m-top-20 {
     margin-top: 30px;
 }
-
-nav.navbar.bootsnav.no-background.white ul.nav > li.active > a {
-
-    color: #f9af32;
-
-}
-nav.navbar.bootsnav ul.nav li.active > a {
-    color: #f9af32;
-}
-
 
 /* Fin Header*/
 
@@ -147,39 +125,7 @@ li {
 }
 
 @media screen and (max-width:500px) {
-    nav.navbar.navbar{
-        height: 70px;
-    }
-    .logoDT{
-        height: 50px;
-        width: 50px;
-        padding-bottom: 0;
-        vertical-align: auto;
-        text-align: left;
-    }
 
-    .reseaux{
-        visibility: visible;
-    }
-    .navbar-brand {
-        padding: 10px 2px;
-    }
-    nav.navbar.bootsnav .navbar-toggle {
-        background-color: transparent !important;
-        border: none;
-        padding: 0;
-        font-size: 30px;
-        position: relative;
-        top: 5px;
-    }
-    nav.navbar.bootsnav ul.nav > li > a, .attr-nav > ul > li > a {
-        color: white;
-    }
-
-    nav.navbar.bootsnav.no-background {
-        background-color: transparent;
-        border: none;
-    }
     h1.text-orange{
         font-size: 60px;
     }
@@ -201,18 +147,11 @@ li {
         padding-top: 0px;
     }
 
-    #bars{
-        padding-top: 80%;
-    }
 
     .home {
         padding-top: 80px;
         padding-bottom: 320px;
         width: 100%;}
-
-    .navbar-toggle{
-        color:white;
-    }
 
     .titlepage {
         padding-top: 30%;
@@ -355,10 +294,16 @@ h1 span, h2 span, h3 span, h4 span, h5 span, p span {
 /* Finexpertises*/
 
 /*services*/
-span{
-    font-size: small;
-}
 
+.pricing_body{
+    line-height:1.5;
+    text-align: left;
+    padding-left: 2%;
+    padding-right:2%
+}
+.pricing_body ul {
+    font-weight: 600;
+}
 /*Fin services*/
 
 /*contact*/

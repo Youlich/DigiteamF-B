@@ -24,6 +24,7 @@ Encore
     .addStyleEntry('auth', './public/stylperso/auth.css')
     .addStyleEntry('mail', './public/stylperso/mail.css')
     .addStyleEntry('styleAdmin', './public/styleAdmin/style.css')
+    .addStyleEntry('navbar', './public/stylperso/navbar.css')
     .addStyleEntry('styleDevisEmail', './public/styleAdmin/styleDevisEmail.css')
 
 //.addEntry('page1', './assets/js/page1.js')

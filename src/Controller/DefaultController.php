@@ -18,42 +18,42 @@ use App\Service\addNewsletter;
 
 class DefaultController extends AbstractController
 {
-    /**
-     * @Route("/", name="accueil")
-     */
-    public function index(Request $request)
-    {
-    	$newsletter = new Newsletter();
+	/**
+	 * @Route("/", name="accueil")
+	 */
+	public function index(Request $request)
+	{
+		$newsletter = new Newsletter();
 
-        $form = $this->createForm(NewsletterType::class, $newsletter);
+		$form = $this->createForm(NewsletterType::class, $newsletter);
 
-        $form->handleRequest($request);
+		$form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
-        	$this->addFlash(
-                'notice',
-                'Nous avons bien reçu votre demande d inscription aux newsletters.'
-            );
+		if($form->isSubmitted() && $form->isValid())
+		{
+			$this->addFlash(
+				'notice',
+				'Nous avons bien reçu votre demande d inscription aux newsletters.'
+			);
 
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($newsletter);
-            $manager->flush();
+			$manager = $this->getDoctrine()->getManager();
+			$manager->persist($newsletter);
+			$manager->flush();
 
-            return $this->redirectToRoute('accueil');
-        }
+			return $this->redirectToRoute('accueil');
+		}
 
-        return $this->render('index.html.twig', array(
-        	'form' => $form->createView(),
-        ));
-    }
+		return $this->render('index.html.twig', array(
+			'form' => $form->createView(),
+		));
+	}
 
 	/**
 	 * @Route("/nos-services", name="services")
 	 */
-    public function service(){
-	    return $this->render('services.html.twig');
-    }
+	public function service(){
+		return $this->render('services.html.twig');
+	}
 
 	/**
 	 * @Route("/presentation-de-notre-agence-Digiteam", name="agenceDigiTeam")
@@ -76,7 +76,7 @@ class DefaultController extends AbstractController
 	{
 		$repository = $this->getDoctrine()->getRepository(Article::class);
 
-        $articles = $repository->findAll();
+		$articles = $repository->findAll();
 
 		return $this->render('blog.html.twig', array(
 			'articles' => $articles,
@@ -90,30 +90,30 @@ class DefaultController extends AbstractController
 	{
 		$commentaire = new Commentaire();
 
-        $form = $this->createForm(CommentaireType::class, $commentaire);
+		$form = $this->createForm(CommentaireType::class, $commentaire);
 
-        $commentaire->setDateAjout(new \DateTime());
-        $commentaire->setArticle($article);
+		$commentaire->setDateAjout(new \DateTime());
+		$commentaire->setArticle($article);
 
-        $form->handleRequest($request);
+		$form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
-            $manager = $this->getDoctrine()->getManager();
+		if($form->isSubmitted() && $form->isValid())
+		{
+			$manager = $this->getDoctrine()->getManager();
 
-            if($commentaire->getCaseNewsletter() == 'true')
-            {
-                $newsletter = $addNewsletter->add($commentaire);
-                $manager->persist($newsletter);
-            }
+			if($commentaire->getCaseNewsletter() == 'true')
+			{
+				$newsletter = $addNewsletter->add($commentaire);
+				$manager->persist($newsletter);
+			}
 
-            $manager->persist($commentaire);
-            $manager->flush();
+			$manager->persist($commentaire);
+			$manager->flush();
 
-            return $this->redirectToRoute('article', array(
-            	'slug' => $article->getSlug(),
-            ));
-        }
+			return $this->redirectToRoute('article', array(
+				'slug' => $article->getSlug(),
+			));
+		}
 
 		return $this->render('articleBlog.html.twig', array(
 			'article' => $article,
@@ -129,8 +129,8 @@ class DefaultController extends AbstractController
 	}
 
 	/**
- * @Route("/plan-du-site", name="siteMap")
- */
+	 * @Route("/plan-du-site", name="siteMap")
+	 */
 	public function sitemap(){
 		return $this->render('siteMap.html.twig');
 	}
@@ -141,12 +141,4 @@ class DefaultController extends AbstractController
 	public function mentionsLegales(){
 		return $this->render('mentionsLegales.html.twig');
 	}
-
-	/**
-	 * @Route("/mail", name="mail")
-	 */
-	public function mail(){
-		return $this->render('/emails/sendDevis.html.twig');
-	}
-
 }

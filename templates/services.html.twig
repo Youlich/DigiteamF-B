@@ -16,9 +16,8 @@
 
 </head>
 
-<body>
 {% include 'layout/navbar.html.twig' %}
-
+<body>
 <div class="titlepage">
 
     <div class="container">
@@ -52,7 +51,7 @@
                                 <span><h3 class="text-uppercase">PACK STARTER</h3></span>
                             </div><br/>
 
-                        <div class="pricing_body bg-white p-top-20 p-bottom-20" style="text-align: left;padding-left: 5%;padding-right:5px">
+                        <div class="pricing_body bg-white p-top-20 p-bottom-20">
                             <ul>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Création du site Wordpress 1 à 5 pages</span> </li>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Choix du thème parmi une selection</span> </li>
@@ -66,6 +65,9 @@
                             </ul>
                             <div class="pricing_btn text-center m-top-40">
                                 <h3>1450€</h3>
+                            </div>
+                            <div class="pricing_btn text-center m-top-40">
+                                <a href="{{ path ('devis') }}#starter" class="btn btn-default">Demander un devis</a>
                             </div>
                         </div>
                         </div>
@@ -82,10 +84,10 @@
                             <span><h3 class="text-uppercase">PACK CHALLENGER</h3></span>
                         </div><br/>
 
-                        <div class="pricing_body bg-white p-top-20 p-bottom-20" style="text-align: left;padding-left: 5%;padding-right:5px">
+                        <div class="pricing_body bg-white p-top-20 p-bottom-20">
                             <ul>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Création du site Wordpress 5 à 15 pages</span> </li>
-                                <li><i class="fa fa-check-circle text-primary"></i> <span>Choix du thème parmi une selection premium</span> </li>
+                                <li><i class="fa fa-check-circle text-primary"></i> <span>Choix d'un thème premium</span> </li>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Responsive design</span> </li>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Création d'un formulaire de contact</span> </li>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Création d'un blog</span> </li>
@@ -100,6 +102,9 @@
                             </ul>
                             <div class="pricing_btn text-center m-top-40">
                                 <h3>2500€</h3>
+                            </div>
+                            <div class="pricing_btn text-center m-top-40">
+                                <a href="{{ path ('devis') }}#challenger" class="btn btn-default">Demander un devis</a>
                             </div>
                         </div>
                     </div>
@@ -116,7 +121,7 @@
                             <span><h3 class="text-uppercase">Pack EXPERT</h3></span>
                         </div><br/>
 
-                        <div class="pricing_body bg-white p-top-20 p-bottom-20" style="text-align: left;padding-left: 5%;padding-right:5px">
+                        <div class="pricing_body bg-white p-top-20 p-bottom-20">
                             <ul>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Création du site sur mesure</span> </li>
                                 <li><i class="fa fa-check-circle text-primary"></i> <span>Thème unique design sur mesure</span> </li>
@@ -138,14 +143,14 @@
                             <div class="pricing_btn text-center m-top-40">
                                 <h3>à partir de 4000€</h3>
                             </div>
+                            <div class="pricing_btn text-center m-top-40">
+                                <a href="{{ path ('devis') }}#expert" class="btn btn-default">Demander un devis</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div><!-- End off col-md-4 -->
             </div><br/>
-        <div align="center" >
-            <a href="{{ path ('devis') }}" class="btn btn-default">Demander un devis</a>
-        </div><br/><br/>
 
     <div class="row">
         <div class="col-md-4 col-sm-12">
@@ -158,7 +163,7 @@
                         <span><h3 class="text-uppercase">AUDIT/CONSEIL</h3></span>
                     </div><br/>
 
-                    <div class="pricing_body bg-white p-top-20 p-bottom-20" style="text-align: left;padding-left: 5%;padding-right:2%">
+                    <div class="pricing_body bg-white p-top-20 p-bottom-20">
                         <ul>
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Rapport d'analyse complet avec préconisations</span></li>
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Identification de facteurs techniques bloquants</span></li>
@@ -173,7 +178,7 @@
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Recherches d'opportunités</span></li>
                         </ul>
                         <div class="pricing_btn text-center m-top-40">
-                            <a href="{{ path ('devis') }}" class="btn btn-default">Demander un devis</a>
+                            <a href="{{ path ('devis') }}#consulting" class="btn btn-default">Demander un devis</a>
                         </div>
                     </div>
                 </div>
@@ -185,12 +190,12 @@
 
                 <div class="pricing_head p-top-30 p-bottom-100 text-center">
                     <div class="card-img">
-                        <img src="/images/design.png" alt="design" style="height:189px;">
+                        <img src="/images/design.png" alt="design">
                         <br/><br/>
                         <span><h3 class="text-uppercase">Design</h3></span>
                     </div><br/>
 
-                    <div class="pricing_body bg-white p-top-20 p-bottom-20" style="text-align: left;padding-left: 5%;padding-right:5%">
+                    <div class="pricing_body bg-white p-top-20 p-bottom-20">
                         <ul>
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Conception charte graphique</span></li>
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Création logo</span></li>
@@ -199,7 +204,7 @@
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Flyer</span></li>
                         </ul>
                         <div class="pricing_btn text-center m-top-40">
-                            <a href="{{ path ('devis') }}" class="btn btn-default">Demander un devis</a>
+                            <a href="{{ path ('devis') }}#design" class="btn btn-default">Demander un devis</a>
                         </div>
                     </div>
                 </div>
@@ -211,12 +216,12 @@
 
                 <div class="pricing_head p-top-30 p-bottom-100 text-center">
                     <div class="card-img">
-                        <img src="/images/Inbound.png" alt="inbound marketing" style="height:189px;">
+                        <img src="/images/Inbound.png" alt="inbound marketing">
                         <br/><br/>
                         <span><h3 class="text-uppercase">INBOUND MARKETING</h3></span>
                     </div><br/>
 
-                    <div class="pricing_body bg-white p-top-20 p-bottom-20" style="text-align: left;padding-left: 5%;padding-right:5%">
+                    <div class="pricing_body bg-white p-top-20 p-bottom-20">
                         <ul>
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Définition du contexte et analyse du marché</span></li>
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Gestion des réseaux sociaux</span></li>
@@ -225,7 +230,7 @@
                             <li><i class="fa fa-check-circle text-primary"></i> <span>Optimisation ROI</span></li>
                         </ul>
                         <div class="pricing_btn text-center m-top-40">
-                            <a href="{{ path ('devis') }}" class="btn btn-default">Demander un devis</a>
+                            <a href="{{ path ('devis') }}#inboundmarketing" class="btn btn-default">Demander un devis</a>
                         </div>
 
                     </div>

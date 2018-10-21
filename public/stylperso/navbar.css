@@ -1,0 +1,63 @@
+nav.navbar.bootsnav {
+    background-color: #1D3F7C;
+    height: 150px;
+    border-bottom: none;
+}
+
+#navbar-menu{
+    padding-top: 30px;
+}
+nav.navbar.bootsnav ul.nav > li > a, .attr-nav > ul > li > a {
+    color: white;
+    background-color: transparent !important;
+}
+
+nav.navbar.bootsnav ul.nav li > a.active {
+    color: #f9af32;
+}
+
+
+@media screen and (max-width:500px) {
+    nav.navbar.navbar{
+        height: 70px;
+    }
+    .logoDT{
+        height: 50px;
+        width: 50px;
+        padding-bottom: 0;
+        vertical-align: auto;
+        text-align: left;
+    }
+
+    .reseaux{
+        visibility: visible;
+    }
+    .navbar-brand {
+        padding: 10px 2px;
+    }
+    nav.navbar.bootsnav .navbar-toggle {
+        background-color: transparent !important;
+        border: none;
+        padding: 0;
+        font-size: 30px;
+        position: relative;
+        top: 5px;
+    }
+    nav.navbar.bootsnav ul.nav > li > a, .attr-nav > ul > li > a {
+        color: white;
+    }
+
+    nav.navbar.bootsnav.no-background {
+        background-color: transparent;
+        border: none;
+    }
+
+    #bars{
+        padding-top: 80%;
+    }
+
+    .navbar-toggle{
+        color:white;
+    }
+
+}
