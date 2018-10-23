@@ -141,4 +141,9 @@ class DefaultController extends AbstractController
 	public function mentionsLegales(){
 		return $this->render('mentionsLegales.html.twig');
 	}
+
+
+
+
+
 }
