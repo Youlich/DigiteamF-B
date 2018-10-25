@@ -19,32 +19,31 @@
 
 {% include 'layout/navbar.html.twig' %}
 <body>
-<div class="titlepage">
-
+<section class="home bg-black fix contact">
     <div class="container">
-        <div class="">
-            <div class="main_home text-center">
-                <div class="col-md-12">
-                    <div class="">
-                        <div class="">
-                            <div class="home_text ">
-                                <h1 class="text-orange">Contactez-nous</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="home_text ">
+             <h1 class="text-center text-orange">Contactez-nous</h1>
         </div>
+
+
+        <a class="mouse-scroll" href="#ici">
+                            <span class="mouse">
+                                <span class="mouse-movement"></span>
+                            </span>
+            <span class="mouse-message fadeIn">C'est ici !</span> <br/>
+        </a>
+
     </div>
-</div>
+</section>
 <br/><br/><br/><br/>
 
 <div class="container">
 
     <div align="center" >
-        <a href="{{ path ('devis') }}" class="btn btn-default">Vous souhaitez un devis cliquez ici</a>
+        <a href="{{ path ('devis') }}" class="btn btn-default btnform">Vous souhaitez un devis cliquez ici</a>
     </div>
     <br/><br/>
+    <div class="form">
     <div class="row">
 
         <div style="width:100%;">
@@ -59,7 +58,7 @@
                     <div class="form-group">
                         <div>
                             {{ form_label(form.nom, "Nom", {'label_attr': {'class': 'control-label'}}) }}
-                        </div>  
+                        </div>
                         <div>
                             {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} }) }}
                         </div>
@@ -73,7 +72,7 @@
                     <div class="form-group">
                         <div>
                             {{ form_label(form.prenom, "Prénom", {'label_attr': {'class': 'control-label'}}) }}
-                        </div>  
+                        </div>
                         <div>
                             {{ form_widget(form.prenom, { 'attr': {'class': 'form-control'} }) }}
                         </div>
@@ -84,12 +83,12 @@
                 </div>
             </div>
 
-            <div class="row">                       
+            <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
                         <div>
                             {{ form_label(form.email, "E-mail", {'label_attr': {'class': 'control-label'}}) }}
-                        </div>  
+                        </div>
                         <div>
                             {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
                         </div>
@@ -100,12 +99,12 @@
                 </div>
             </div>
 
-            <div class="row">                       
+            <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
                         <div>
                             {{ form_label(form.sujet, "Sujet", {'label_attr': {'class': 'control-label'}}) }}
-                        </div>  
+                        </div>
                         <div>
                             {{ form_widget(form.sujet, { 'attr': {'class': 'form-control'} }) }}
                         </div>
@@ -114,14 +113,14 @@
                         </div>
                     </div>
                 </div>
-            </div>              
-                                 
+            </div>
+
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
                         <div>
                             {{ form_label(form.message, "Message", {'label_attr': {'class': 'control-label'}}) }}
-                        </div>  
+                        </div>
                         <div>
                             {{ form_widget(form.message, { 'attr': {'style':'min-height:300px', 'class': 'form-control'} }) }}
                         </div>
@@ -138,7 +137,7 @@
                         <div>
                             {{ form_widget(form.caseNewsletter, { 'attr': {'class': ''} }) }}
                             {{ form_label(form.caseNewsletter, "Recevoir la newsletter Digiteam", {'label_attr': {'class': 'control-label'}}) }}
-                        </div>  
+                        </div>
                         <div>
                             {{ form_errors(form.caseNewsletter, { 'attr': {'class': 'form-control '} }) }}
                         </div>
@@ -152,8 +151,8 @@
                         <div>
                             {{ form_widget(form.caseReglement, { 'attr': {'class': ''} }) }}
                             <label>J'accepte les <a href="{{ path('mentionsLegales') }}">mentions légales</a> et la <a href="{{ path('mentionsLegales') }}#politique">politique de confidentialité</a></label>
-                            
-                        </div>  
+
+                        </div>
                         <div>
                             {{ form_errors(form.caseReglement, { 'attr': {'class': 'form-control '} }) }}
                         </div>
@@ -161,14 +160,14 @@
                 </div>
             </div>
             <div align="center" >
-            {{ form_widget(form.save, {'attr': {'class': 'btn btn-default'}, 'label': 'Envoyer'}) }}
+                {{ form_widget(form.save, {'attr': {'class': 'btn btn-default'}, 'label': 'Envoyer >>'}) }}
             </div>
             {{ form_rest(form) }}
 
             {{ form_end(form) }}
 
-        </div>        
-        
+        </div>
+    </div>
     </div>
 </div>
 <br/><br/><br/><br/>

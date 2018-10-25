@@ -54,6 +54,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
 
                 <a class="mouse-scroll" href="#agence">
@@ -80,7 +81,7 @@
                         <br/><br/>
                         <h3 class="text-white text-uppercase" style="font-size: 40px">Nous sommes prêts à relever votre nouveau défi !</h3>
 
-                        <a href="{{ path('agenceDigiTeam') }}" class="btn btn-primary m-top-100">Nous découvrir</a>
+                        <a href="{{ path('agenceDigiTeam') }}" class="btn btn-primary m-top-100">Nous découvrir >></a>
                     </div>
                 </div>
             </div>
@@ -118,7 +119,6 @@
                                 <div class="col-xs-6">
                                     <div class="features_item_text">
                                         <img src="{{ asset('/images/web.png') }}" alt="web" class="img-circle" />
-
                                         <p class="m-top-20">Web</p>
                                     </div>
                                 </div>
@@ -145,8 +145,9 @@
                     </div>
 
                     <div align="center">
-                        <a href="{{ path ('expertise') }}" class="btn btn-default">En savoir plus</a>
+                        <a href="{{ path ('expertise') }}" class="btn btn-default">En savoir plus >></a>
                     </div>
+                    <br/><br/>
                 </div>
             </div><!-- End off row -->
         </div><!-- End off container -->
@@ -164,7 +165,7 @@
         <!-- Portfolio container-->
         <div class="container">
             <div class="row">
-                <div class="main-portfolio" style="padding-bottom: 5%;">
+                <div class="main-portfolio" style="padding-bottom: 10px;">
 
                     <div class="col-md-4">
                         <div class="head_title text-left sm-text-center wow fadeInDown">
@@ -183,7 +184,7 @@
                                     <br/>
                                     <h4 class="text-white">Site de la Commune de Bailly</h4>
                                     <p class="text-white">Wordpress</p>
-                                    <a href="http://www.elodie-rouel.fr/" class="btn btn-primary">Voir le site</a>
+                                    <a href="http://www.elodie-rouel.fr/" class="btn btn-primary">Voir le site >></a>
                                 </div>
                             </div><!-- End off grid Hover area -->
                         </div><!-- End off grid item -->
@@ -195,7 +196,7 @@
                                     <br/><br/>
                                     <h4 class="text-white">Site de la ville de Lille</h4>
                                     <p class="text-white">Wordpress</p>
-                                    <a href="http://web-mairie-lille.fr/wordpress/" class="btn btn-primary">Voir le site</a>
+                                    <a href="http://web-mairie-lille.fr/wordpress/" class="btn btn-primary">Voir le site >></a>
                                 </div>
                             </div><!-- End off grid Hover area -->
                         </div><!-- End off grid item -->
@@ -207,7 +208,7 @@
                                     <br/>
                                     <h4 class="text-white">Blog pour un écrivain</h4>
                                     <p class="text-white">Programmation Php</p>
-                                    <a href="http://blogforteroche.jutatibouet.fr/'" class="btn btn-primary">Voir le site</a>
+                                    <a href="http://blogforteroche.jutatibouet.fr/'" class="btn btn-primary">Voir le site >></a>
                                 </div>
                             </div><!-- End off grid Hover area -->
                         </div><!-- End off grid item -->
@@ -219,7 +220,7 @@
                                     <br/><br/>
                                     <h4 class="text-white">Billetterie du Musée du Louvre</h4>
                                     <p class="text-white">Symfony 4</p>
-                                    <a href="http://billetteriedulouvre.jutatibouet.fr/" class="btn btn-primary">Voir le site</a>
+                                    <a href="http://billetteriedulouvre.jutatibouet.fr/" class="btn btn-primary">Voir le site >></a>
                                 </div>
                             </div><!-- End off grid Hover area -->
                         </div><!-- End off grid item -->
@@ -231,7 +232,7 @@
                                     <br/>
                                     <h4 class="text-white">Site de la commune de Savenay</h4>
                                     <p class="text-white">Wordpress</p>
-                                    <a href="http://projet1.jutatibouet.fr/" class="btn btn-primary">Voir le site</a>
+                                    <a href="http://projet1.jutatibouet.fr/" class="btn btn-primary">Voir le site >></a>
                                 </div>
                             </div><!-- End off grid Hover area -->
                         </div><!-- End off grid item -->
@@ -242,7 +243,7 @@
                                 <div><br/>
                                     <h4 class="text-white">Site Hockey Lille</h4>
                                     <p class="text-white">Wordpress</p>
-                                    <a href="http://roller-hockey-asso.fr/" class="btn btn-primary">Voir le site</a>
+                                    <a href="http://roller-hockey-asso.fr/" class="btn btn-primary">Voir le site >></a>
                                 </div>
                             </div><!-- End off grid Hover area -->
                         </div><!-- End off grid item -->
@@ -255,51 +256,35 @@
 
 
     <!-- Newsletter -->
-    <section id="newsletter" class="about bg-orange roomy-80">
+    <section id="newsletter" class="about bg-orange roomy-50" style="padding-bottom: 0px">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
                     <div class="main_about text-center">
-                        <h1 class="text-black">Newsletter</h1>
-                        <div>
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-md-12">
-
+                        <h1 class="text-black" style="margin-bottom:20px;">Newsletter</h1>
+                                    <div class="col-md-4">
                                         {{ form_start(form) }}
-
                                         {{ form_errors(form) }}
-
                                         {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder' :'Votre prénom', 'style': 'width: 20%;min-width: 300px;display: block;margin: 0 auto;margin-top: 25px;margin-bottom: 25px;'} }) }}
-
-                                        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder' :'Votre nom', 'style': 'width: 20%;min-width: 300px;display: block;margin: 0 auto;margin-top: 25px;margin-bottom: 25px;'} }) }}
-                                        
+                                    </div>
+                                    <div class="col-md-4">
                                         {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder' :'email@exemple.com', 'style': 'width: 20%;min-width: 300px;display: block;margin: 0 auto;margin-top: 25px;margin-bottom: 25px;'} }) }}
-
                                     </div>
-                                    
-                                    <div class="" style="padding-top: 8%;">
-                                        
-                                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}, 'label': 'Valider'}) }}
-
+                                    <div class="col-md-4">
+                                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary', 'style': 'margin-top:25px;'}, 'label': 'Valider >>'}) }}
                                     </div>
-                                </div></div>
-                                <div class="col-xs-12" style="margin-top:20px;">                                        
+
+
+                                <div class="col-xs-12" style="margin-top:20px;margin-bottom: 0px">
 
                                     <label>{{ form_widget(form.caseObligatoire, { 'attr': {'class': '', 'style': ''} }) }} En cochant cette case, j'accepte que mon e-mail soit exploité pour la réception de la newsletter DigiTeam (voir la <a href="{{ path('mentionsLegales') }}">politique de confidentialité</a>)</label>
 
                                 </div>
-
+                        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder' :'Votre nom', 'style': 'visibility:hidden;width: 20%;min-width: 300px;display: block;margin: 0 auto;margin-top: 25px;margin-bottom: 25px;'} }) }}
                                 {{ form_rest(form) }}
 
                                 {{ form_end(form) }}
 
 
-                            
-                        </div>
                     </div>
-                </div>
-            </div>
         </div>
         <!-- newsletter / End -->
     </section>
@@ -310,9 +295,11 @@
 </div>
 
 {% include 'layout/footer.html.twig' %}
+
 </body>
 
 {% block javascripts %}
+
     <!-- JS includes -->
     <script type="text/javascript" src="{{ asset('bootstrap/js/vendor/jquery-1.11.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bootstrap/js/vendor/bootstrap.min.js') }}"></script>

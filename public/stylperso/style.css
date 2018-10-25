@@ -77,6 +77,7 @@ h1 {
     background-color: #1D3F7C;
 }
 
+
 .scrollup::after {
     content: "\F106";
 }
@@ -121,30 +122,42 @@ li {
 
 .mouse-scroll {
     position: absolute;
-    left:45%;
 }
+
 
 @media screen and (max-width:500px) {
 
+    .Sdomaine{
+        background-size: cover;
+        height: 600px;
+    }
+
     h1.text-orange{
         font-size: 60px;
+    }
+
+    .domaines {
+        height:50px;
+        overflow: hidden;
+        margin-top: 10%;
+    }
+
+    .domaines h2{
+        margin-bottom: 5px;
+        height:50px;
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 30px;
+        font-weight: bold;
     }
 
     .home_text h1 {
         font-size: 60px;
     }
 
-    .col-md-12 {
-        padding-top: 100px;
-    }
-
     .mouse-scroll {
         position: absolute;
         left:35%;
-    }
-
-    .col-md-12 {
-        padding-top: 0px;
     }
 
 
@@ -153,15 +166,20 @@ li {
         padding-bottom: 320px;
         width: 100%;}
 
-    .titlepage {
-        padding-top: 30%;
-        background-color: #1D3F7C;
-        height: 420px;
-    }
+
 
     .imgAgence{
         height: 420px;
     }
+    .form {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .btnform{
+        padding: 1rem 1rem;
+    }
+
+
 }
 
 .titlepage {
@@ -194,6 +212,11 @@ li {
 
 /*fin article blog*/
 
+/*blog*/
+
+.blog{
+    padding-top: 20%;
+}
 .port-image
 {
     width: 100%;
@@ -274,6 +297,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, p span {
     padding-bottom: 10%;
     background-color: white;
     color : black;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
 }
 
 #teams {
@@ -286,11 +322,28 @@ h1 span, h2 span, h3 span, h4 span, h5 span, p span {
 
 /*expertises*/
 
-.card{
-    padding-top: 40%; /* poussé de la moitié de hauteur du référent */
-    background : #f9af32;
-    height : 226px;
+.domaines {
+    height:100px;
+    overflow: hidden;
+    margin-top: 10%;
 }
+
+.domaines h2{
+    margin-bottom: 5px;
+    height:100px;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.Sdomaine{
+    background-image: url('/images/expertise.jpg');
+    background-size: cover;
+    height: 800px;
+}
+
+
 /* Finexpertises*/
 
 /*services*/
@@ -307,7 +360,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, p span {
 /*Fin services*/
 
 /*contact*/
-
+.contact{
+    background-image: url('/images/contactez_nous.jpg');
+}
 .box1{
     background: #c5b1c7;
     height: 200px;
@@ -322,7 +377,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, p span {
     background: #327cf9;
     height: 200px;
     margin-bottom: 0;
+}
 
+.devis{
+    background-image: url('/images/demandez_devis.jpg');
 }
 
 /*Portfolio*/

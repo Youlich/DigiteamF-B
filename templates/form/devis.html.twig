@@ -19,34 +19,30 @@
 
 {% include 'layout/navbar.html.twig' %}
 <body>
-<div class="titlepage">
-
+<section class="home bg-black fix devis">
 	<div class="container">
-		<div class="">
-			<div class="main_home text-center">
-				<div class="col-md-12">
-					<div class="">
-						<div class="">
-							<div class="home_text ">
-								<h1 class="text-orange">Demandez un devis</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="home_text ">
+			<h1 class="text-center text-orange">Demandez un devis</h1>
 		</div>
+
+		<a class="mouse-scroll" href="#ici">
+                            <span class="mouse">
+                                <span class="mouse-movement"></span>
+                            </span>
+			<span class="mouse-message fadeIn">C'est ici !</span> <br/>
+		</a>
+
 	</div>
-</div>
+</section>
 <br/><br/><br/><br/>
-<div class="container">
-	<div class="row">
-		
-        <div style="width:100%;">
-            
+
+<br/><br/><br/><br/>
+
+<div id="ici" class="container">
+
+        <div class="form">
             {{ form_start(form, {'attr':{'novalidate':'novalidate'}}, {'class': 'form-horizontal'} ) }}
-
 			{{ form_errors(form) }}
-
 			<div class="row">
 
 				<div class="col-md-3 col-sm-2">
@@ -84,11 +80,8 @@
 			            </div>
 					</div>
 				</div>
-
 			</div>
-
 			<div class="row">
-
 				<div class="col-md-3">
 					<div class="form-group">
 						<div>
@@ -124,12 +117,11 @@
 			            </div>
 					</div>
 				</div>
-
-			</div>						
-
+			</div>
+			<br/><br/>
 			<div class="row">
-			    <div class="col-md-5 col-xs-12">
-			        <div class="form-group">
+				<div class="col-md-4">
+			        <div class="form-group" >
 			            <div>
 			                {{ form_label(form.civilite, "Civilité", {'label_attr': {'class': 'control-label'}}) }}
 			            </div>  
@@ -140,12 +132,9 @@
 			                {{ form_errors(form.civilite, { 'attr': {'class': 'form-control '} }) }}
 			            </div>
 			        </div>
-			    </div>
-			</div>
-			
-			    <div class="row">
-			        <div class="col-md-5 col-xs-12">
-			            <div class="form-group">
+				</div>
+				<div class="col-md-4">
+				    <div class="form-group">
 			                <div>
 			                    {{ form_label(form.nom, "Nom", {'label_attr': {'class': 'control-label'}}) }}
 			                </div>  
@@ -155,11 +144,10 @@
 			                <div>
 			                    {{ form_errors(form.nom, { 'attr': {'class': 'form-control'}}) }}
 			                </div>
-			            </div>
-			        </div>
-
-			        <div class="col-md-5 col-sm-offset-2 col-xs-12">
-			            <div class="form-group">
+					</div>
+				</div>
+				<div class="col-md-4">
+				    <div class="form-group">
 			                <div>
 			                    {{ form_label(form.prenom, "Prénom", {'label_attr': {'class': 'control-label'}}) }}
 			                </div>  
@@ -169,9 +157,9 @@
 			                <div>
 			                    {{ form_errors(form.prenom, { 'attr': {'class': 'form-control '} }) }}
 			                </div>
-			            </div>
-			        </div>
+			         </div>
 			    </div>
+			</div>
 
 			    <div class="row">
 			        <div class="col-md-5 col-xs-12">
@@ -326,7 +314,7 @@
 			        </div>
 			    </div>
 			<div align="center" >
-                {{ form_widget(form.save, {'attr': {'class': 'btn btn-default'}, 'label': 'Envoyer'}) }}
+                {{ form_widget(form.save, {'attr': {'class': 'btn btn-default'}, 'label': 'Envoyer >>'}) }}
 			</div>
 
 
@@ -335,7 +323,7 @@
 			{{ form_end(form) }}
 
         </div>
-    </div>
+
 </div>
 <br/><br/>
 
