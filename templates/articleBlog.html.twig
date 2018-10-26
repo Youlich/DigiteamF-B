@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}" />
 
-    <title>{% block title %}DigiTeam{% endblock %}</title>
+    <title>{% block title %}Article blog DigiTeam{% endblock %}</title>
 
     {% include 'layout/stylesheets.html.twig' %}
 
@@ -78,11 +78,10 @@
         <div class="row" style="text-align: right">
             <div class="attr-nav">
                 <ul class="list-inline m-top-20">
-                    <li style="padding-top: 8%"><h5>Partagez sur</h5></li>
-                    <li><a href=""><i class="fa fa-facebook" style="color: black"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter" style="color: black"></i></a></li>
-                    <li><a href=""><i class="fa fa-linkedin" style="color: black"></i></a></li>
-                    <li><a href=""><i class="fa fa-instagram" style="color: black"></i></a></li>
+                    <li><iframe src="http://www.facebook.com/plugins/like.php?href=http://digiteamp5.com/article/{slug}&layout=box_count&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65"
+                                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px; margin-top:3px;" allowTransparency="true"></iframe></li>
+                    <li><div class="fb-share-button" data-href="http://digiteamp5.com/article/{slug}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div></li>
+                    <li><a href="http://twitter.com/share" class="social-icon twitter-share-button" data-count="vertical" data-via="digiteam2">Tweet</a></li>
                 </ul>
             </div>
         </div>
@@ -111,8 +110,6 @@
                     <p style="color:#888888;">Publié le : {{ commentaire.dateAjout | date('d/m/y') }}</p>
                 </div>
                 
-                
-                
             </div>
             </br>
         {% endfor %}
@@ -121,6 +118,15 @@
 </div>
 
 {% include 'layout/footer.html.twig' %}
-</body>
-{% include 'layout/javascripts.html.twig' %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
+{% include 'layout/javascripts.html.twig' %}
+</body>

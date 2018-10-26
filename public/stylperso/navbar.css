@@ -4,8 +4,18 @@ nav.navbar.bootsnav {
     border-bottom: none;
 }
 
+.top-search{
+    height : 20px;
+    padding-top:0px;
+}
+
+.top-search input.form-control {
+    height: 20px;
+}
+
+
 #navbar-menu{
-    padding-top: 30px;
+    padding-top: 20px;
 }
 nav.navbar.bootsnav ul.nav > li > a, .attr-nav > ul > li > a {
     color: white;

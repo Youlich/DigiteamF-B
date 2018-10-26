@@ -16,14 +16,14 @@
 
 </head>
 
-
 {% include 'layout/navbar.html.twig' %}
+
 <body>
 
 
-
-<div class="container">
-    <section class="blog">
+<section id="pricing" class="pricing lightbg" >
+<div class="container lightbg">
+    <section class="blog" >
         <div class="filters-button-group text-right sm-text-center">
             <button class="btn filter-button" data-filter="tout">Tout</button>
             <button class="btn filter-button" data-filter="Web">Web</button>
@@ -32,35 +32,40 @@
             <button class="btn filter-button" data-filter="Design">Design</button>
         </div>
     </section>
-    <br/><br/><br/><br/>
-
-
 
     <div class="row">
 
         {% for article in articles %}
 
-            <div class="col-md-4 filter tout {{ article.category }}">
+            <div class="col-md-4 filter tout {{ article.category }}" >
 
-                <div class="card-content">
+                <div class="pricing_item bg-white" style="height:650px;padding-right:5%;padding-left: 5%;padding-top:5%;">
+                    <div class="pricing_head  p-bottom-10 text-center">
                     <div class="card-img">
-                        <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}" style="max-width:100%;min-width: 100%;">
-                        <span><h4>{{ article.titre }}</h4></span>
+                        <img src="{{ asset('uploads/images/') }}{{ article.image }}" alt="{{ article.altImage }}" style="height:199px;width: 400px;">
                     </div>
-                    <div class="card-desc">
+                    </div>
+                        <div class="pricing_head p-top-10  text-center" style="height:150px;">
+                        <span><h4>{{ article.titre }}</h4></span>
+                        </div>
 
+                    <div class="card-desc p-top-10 p-bottom-20" style="height:150px;">
                         <p>{{ article.resume }}</p>
-
-                        <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn-card">En savoir plus</a>
+                    </div>
+                    <div class="pricing_btn text-center m-top-40">
+                        <a href="{{ path('article', { 'slug': article.slug }) }}" class="btn btn-default">En savoir plus >></a>
                     </div>
                 </div>
+                </div>
 
-            </div>
+
         {% endfor %}
 
 
     </div> <br/><br/><br/>
 </div>
+</section>
     {% include 'layout/footer.html.twig' %}
-</body>
+
 {% include 'layout/javascripts.html.twig' %}
+</body>
