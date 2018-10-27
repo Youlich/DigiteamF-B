@@ -3,9 +3,10 @@
 {% block title %}Liste des abonnés aux newsletters{% endblock %}
 
 {% block body %}
-	
+	<p>"PRENOM","EMAIL",</p>
 	{% for newsletter in newsletters %}
-		<p>"{{newsletter.prenom}}","{{newsletter.email}}",</p>
+
+	<p>"{{newsletter.prenom}}","{{newsletter.email}}",</p>
 	{% endfor %}
 
 
